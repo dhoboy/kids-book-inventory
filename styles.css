@@ -28,6 +28,11 @@ h1 {
   top: 0px;
 }
 
+h1 i {
+  display: inline;
+  padding-left: 8px;
+}
+
 input,
 select,
 button {
@@ -109,8 +114,16 @@ table td {
   padding: 8px;
 }
 
+/* tablet/desktop styles */
 @media (min-width: 768px) {
   label {
     grid-template-columns: 1fr 3fr;
+  }
+}
+
+/* small cellphone styles */
+@media (max-width: 600px) {
+  h1 i {
+    display: none;
   }
 }

@@ -10,18 +10,14 @@ const initialState = {
 let state = JSON.parse(JSON.stringify(initialState));
 
 d3.csv("./book_data.csv").then((data) => {
-  //console.log("data biotch: ", data);
-
   /*** draw function after state updates ***/
-  const draw = (callsite) => {
+  const draw = (_callsite) => {
+    // callsite for debugging purposes
     d3.select("#books-container").html("");
 
-    //console.log("draw the table", state);
-    //console.log("callsite: ", callsite);
     const tableHeaders = Object.keys(data?.[0]);
 
     const filteredDataset = data.filter((d) => {
-      //console.log("d: ", d);
       let c1 = true;
       let c2 = true;
       let c3 = true;
